@@ -7,23 +7,70 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C51135471D3442A700DD3898 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51135461D3442A700DD3898 /* AppDelegate.swift */; };
-		C51135491D3442A700DD3898 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C51135481D3442A700DD3898 /* MasterViewController.swift */; };
-		C511354B1D3442A700DD3898 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C511354A1D3442A700DD3898 /* DetailViewController.swift */; };
 		C511354E1D3442A700DD3898 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C511354C1D3442A700DD3898 /* Main.storyboard */; };
 		C51135501D3442A700DD3898 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C511354F1D3442A700DD3898 /* Assets.xcassets */; };
 		C51135531D3442A700DD3898 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C51135511D3442A700DD3898 /* LaunchScreen.storyboard */; };
+		C552DF821D3779F0008E3A67 /* AddCarTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DF7F1D3779F0008E3A67 /* AddCarTableViewController.swift */; };
+		C552DF831D3779F0008E3A67 /* CarListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DF801D3779F0008E3A67 /* CarListTableViewController.swift */; };
+		C552DF841D3779F0008E3A67 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DF811D3779F0008E3A67 /* DetailViewController.swift */; };
+		C552DF881D377B22008E3A67 /* AddPictureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DF851D377B22008E3A67 /* AddPictureCollectionViewCell.swift */; };
+		C552DF891D377B22008E3A67 /* AddPictureCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C552DF861D377B22008E3A67 /* AddPictureCollectionViewCell.xib */; };
+		C552DF8A1D377B22008E3A67 /* PreviewCarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DF871D377B22008E3A67 /* PreviewCarCollectionViewCell.swift */; };
+		C552DF8C1D377B30008E3A67 /* AppLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DF8B1D377B30008E3A67 /* AppLanguage.swift */; };
+		C552DF8E1D377B3B008E3A67 /* FatalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DF8D1D377B3B008E3A67 /* FatalError.swift */; };
+		C552DF911D377B49008E3A67 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DF8F1D377B49008E3A67 /* AppDelegate.swift */; };
+		C552DF9A1D377B7C008E3A67 /* Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DF931D377B7C008E3A67 /* Array.swift */; };
+		C552DF9B1D377B7C008E3A67 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DF941D377B7C008E3A67 /* String.swift */; };
+		C552DF9C1D377B7C008E3A67 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DF951D377B7C008E3A67 /* UINavigationBar.swift */; };
+		C552DF9D1D377B7C008E3A67 /* UIStoryboardSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DF961D377B7C008E3A67 /* UIStoryboardSegue.swift */; };
+		C552DF9E1D377B7C008E3A67 /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DF971D377B7C008E3A67 /* UITextField.swift */; };
+		C552DF9F1D377B7C008E3A67 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DF981D377B7C008E3A67 /* UIView.swift */; };
+		C552DFA01D377B7C008E3A67 /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DF991D377B7C008E3A67 /* UIViewController.swift */; };
+		C552DFA41D377B8B008E3A67 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DFA11D377B8B008E3A67 /* CoreDataStack.swift */; };
+		C552DFA51D377B8B008E3A67 /* ErrorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DFA21D377B8B008E3A67 /* ErrorPresenter.swift */; };
+		C552DFA61D377B8B008E3A67 /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DFA31D377B8B008E3A67 /* LocalizationService.swift */; };
+		C552DFAC1D377B97008E3A67 /* CellIdentifiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DFA71D377B97008E3A67 /* CellIdentifiable.swift */; };
+		C552DFAD1D377B97008E3A67 /* CoreDataCompatible.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DFA81D377B97008E3A67 /* CoreDataCompatible.swift */; };
+		C552DFAE1D377B97008E3A67 /* ErrorPresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DFA91D377B97008E3A67 /* ErrorPresentable.swift */; };
+		C552DFAF1D377B97008E3A67 /* ExecutableQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DFAA1D377B97008E3A67 /* ExecutableQueue.swift */; };
+		C552DFB01D377B97008E3A67 /* PhotoAttachable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DFAB1D377B97008E3A67 /* PhotoAttachable.swift */; };
+		C552DFB21D377BC7008E3A67 /* DashLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DFB11D377BC7008E3A67 /* DashLineView.swift */; };
+		C552DFB51D377BF5008E3A67 /* TestApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C552DFB31D377BF5008E3A67 /* TestApp.xcdatamodeld */; };
+		C552DFB71D377C53008E3A67 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C552DFB61D377C53008E3A67 /* Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		C51135431D3442A700DD3898 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C51135461D3442A700DD3898 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C51135481D3442A700DD3898 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		C511354A1D3442A700DD3898 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		C511354D1D3442A700DD3898 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C511354F1D3442A700DD3898 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C51135521D3442A700DD3898 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		C51135541D3442A700DD3898 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C552DF7F1D3779F0008E3A67 /* AddCarTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddCarTableViewController.swift; path = ViewControllers/AddCarTableViewController.swift; sourceTree = "<group>"; };
+		C552DF801D3779F0008E3A67 /* CarListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarListTableViewController.swift; path = ViewControllers/CarListTableViewController.swift; sourceTree = "<group>"; };
+		C552DF811D3779F0008E3A67 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DetailViewController.swift; path = ViewControllers/DetailViewController.swift; sourceTree = "<group>"; };
+		C552DF851D377B22008E3A67 /* AddPictureCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddPictureCollectionViewCell.swift; path = Cells/AddPictureCollectionViewCell.swift; sourceTree = "<group>"; };
+		C552DF861D377B22008E3A67 /* AddPictureCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = AddPictureCollectionViewCell.xib; path = Cells/AddPictureCollectionViewCell.xib; sourceTree = "<group>"; };
+		C552DF871D377B22008E3A67 /* PreviewCarCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PreviewCarCollectionViewCell.swift; path = Cells/PreviewCarCollectionViewCell.swift; sourceTree = "<group>"; };
+		C552DF8B1D377B30008E3A67 /* AppLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppLanguage.swift; path = Structs/AppLanguage.swift; sourceTree = "<group>"; };
+		C552DF8D1D377B3B008E3A67 /* FatalError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FatalError.swift; path = Enumerations/FatalError.swift; sourceTree = "<group>"; };
+		C552DF8F1D377B49008E3A67 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = "Supporting Files/AppDelegate.swift"; sourceTree = "<group>"; };
+		C552DF931D377B7C008E3A67 /* Array.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Array.swift; path = Extensions/Array.swift; sourceTree = "<group>"; };
+		C552DF941D377B7C008E3A67 /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = String.swift; path = Extensions/String.swift; sourceTree = "<group>"; };
+		C552DF951D377B7C008E3A67 /* UINavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UINavigationBar.swift; path = Extensions/UINavigationBar.swift; sourceTree = "<group>"; };
+		C552DF961D377B7C008E3A67 /* UIStoryboardSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIStoryboardSegue.swift; path = Extensions/UIStoryboardSegue.swift; sourceTree = "<group>"; };
+		C552DF971D377B7C008E3A67 /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UITextField.swift; path = Extensions/UITextField.swift; sourceTree = "<group>"; };
+		C552DF981D377B7C008E3A67 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIView.swift; path = Extensions/UIView.swift; sourceTree = "<group>"; };
+		C552DF991D377B7C008E3A67 /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIViewController.swift; path = Extensions/UIViewController.swift; sourceTree = "<group>"; };
+		C552DFA11D377B8B008E3A67 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataStack.swift; path = Classes/CoreDataStack.swift; sourceTree = "<group>"; };
+		C552DFA21D377B8B008E3A67 /* ErrorPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorPresenter.swift; path = Classes/ErrorPresenter.swift; sourceTree = "<group>"; };
+		C552DFA31D377B8B008E3A67 /* LocalizationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalizationService.swift; path = Classes/LocalizationService.swift; sourceTree = "<group>"; };
+		C552DFA71D377B97008E3A67 /* CellIdentifiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CellIdentifiable.swift; path = Protocols/CellIdentifiable.swift; sourceTree = "<group>"; };
+		C552DFA81D377B97008E3A67 /* CoreDataCompatible.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CoreDataCompatible.swift; path = Protocols/CoreDataCompatible.swift; sourceTree = "<group>"; };
+		C552DFA91D377B97008E3A67 /* ErrorPresentable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorPresentable.swift; path = Protocols/ErrorPresentable.swift; sourceTree = "<group>"; };
+		C552DFAA1D377B97008E3A67 /* ExecutableQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ExecutableQueue.swift; path = Protocols/ExecutableQueue.swift; sourceTree = "<group>"; };
+		C552DFAB1D377B97008E3A67 /* PhotoAttachable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PhotoAttachable.swift; path = Protocols/PhotoAttachable.swift; sourceTree = "<group>"; };
+		C552DFB11D377BC7008E3A67 /* DashLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashLineView.swift; path = Views/DashLineView.swift; sourceTree = "<group>"; };
+		C552DFB41D377BF5008E3A67 /* TestApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestApp.xcdatamodel; sourceTree = "<group>"; };
+		C552DFB61D377C53008E3A67 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +103,134 @@
 		C51135451D3442A700DD3898 /* TestApp */ = {
 			isa = PBXGroup;
 			children = (
-				C51135461D3442A700DD3898 /* AppDelegate.swift */,
-				C51135481D3442A700DD3898 /* MasterViewController.swift */,
-				C511354A1D3442A700DD3898 /* DetailViewController.swift */,
-				C511354C1D3442A700DD3898 /* Main.storyboard */,
-				C511354F1D3442A700DD3898 /* Assets.xcassets */,
-				C51135511D3442A700DD3898 /* LaunchScreen.storyboard */,
-				C51135541D3442A700DD3898 /* Info.plist */,
+				C5E5F6271D372C520061EDBF /* Structs */,
+				C5E5F6191D371C570061EDBF /* Enumerations */,
+				C5E5F6181D371A570061EDBF /* Resources */,
+				C5E5F6171D371A440061EDBF /* Supporting Files */,
+				C5E5F6141D371A0B0061EDBF /* UI */,
+				C5E3C6211D35A2A2007D0D42 /* Extensions */,
+				C5E3C61E1D35A24F007D0D42 /* Classes */,
+				C5E3C6111D359438007D0D42 /* Protocols */,
 			);
 			path = TestApp;
+			sourceTree = "<group>";
+		};
+		C5E3C60E1D3593E6007D0D42 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C552DF851D377B22008E3A67 /* AddPictureCollectionViewCell.swift */,
+				C552DF861D377B22008E3A67 /* AddPictureCollectionViewCell.xib */,
+				C552DF871D377B22008E3A67 /* PreviewCarCollectionViewCell.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
+		C5E3C6111D359438007D0D42 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				C552DFA71D377B97008E3A67 /* CellIdentifiable.swift */,
+				C552DFA81D377B97008E3A67 /* CoreDataCompatible.swift */,
+				C552DFA91D377B97008E3A67 /* ErrorPresentable.swift */,
+				C552DFAA1D377B97008E3A67 /* ExecutableQueue.swift */,
+				C552DFAB1D377B97008E3A67 /* PhotoAttachable.swift */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		C5E3C61E1D35A24F007D0D42 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C552DFA11D377B8B008E3A67 /* CoreDataStack.swift */,
+				C552DFA21D377B8B008E3A67 /* ErrorPresenter.swift */,
+				C552DFA31D377B8B008E3A67 /* LocalizationService.swift */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		C5E3C6211D35A2A2007D0D42 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				C552DF931D377B7C008E3A67 /* Array.swift */,
+				C552DF941D377B7C008E3A67 /* String.swift */,
+				C552DF951D377B7C008E3A67 /* UINavigationBar.swift */,
+				C552DF961D377B7C008E3A67 /* UIStoryboardSegue.swift */,
+				C552DF971D377B7C008E3A67 /* UITextField.swift */,
+				C552DF981D377B7C008E3A67 /* UIView.swift */,
+				C552DF991D377B7C008E3A67 /* UIViewController.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		C5E5F6141D371A0B0061EDBF /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C5E5F6161D371A230061EDBF /* ViewControllers */,
+				C5E5F6151D371A190061EDBF /* Storyboards */,
+				C5EBBA611D36C36D008A5908 /* Views */,
+				C5E3C60E1D3593E6007D0D42 /* Cells */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		C5E5F6151D371A190061EDBF /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				C511354C1D3442A700DD3898 /* Main.storyboard */,
+				C51135511D3442A700DD3898 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboards;
+			sourceTree = "<group>";
+		};
+		C5E5F6161D371A230061EDBF /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C552DF7F1D3779F0008E3A67 /* AddCarTableViewController.swift */,
+				C552DF801D3779F0008E3A67 /* CarListTableViewController.swift */,
+				C552DF811D3779F0008E3A67 /* DetailViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C5E5F6171D371A440061EDBF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C552DFB61D377C53008E3A67 /* Info.plist */,
+				C552DF8F1D377B49008E3A67 /* AppDelegate.swift */,
+				C552DFB31D377BF5008E3A67 /* TestApp.xcdatamodeld */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C5E5F6181D371A570061EDBF /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C511354F1D3442A700DD3898 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C5E5F6191D371C570061EDBF /* Enumerations */ = {
+			isa = PBXGroup;
+			children = (
+				C552DF8D1D377B3B008E3A67 /* FatalError.swift */,
+			);
+			name = Enumerations;
+			sourceTree = "<group>";
+		};
+		C5E5F6271D372C520061EDBF /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				C552DF8B1D377B30008E3A67 /* AppLanguage.swift */,
+			);
+			name = Structs;
+			sourceTree = "<group>";
+		};
+		C5EBBA611D36C36D008A5908 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C552DFB11D377BC7008E3A67 /* DashLineView.swift */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,6 +293,8 @@
 			files = (
 				C51135531D3442A700DD3898 /* LaunchScreen.storyboard in Resources */,
 				C51135501D3442A700DD3898 /* Assets.xcassets in Resources */,
+				C552DF891D377B22008E3A67 /* AddPictureCollectionViewCell.xib in Resources */,
+				C552DFB71D377C53008E3A67 /* Info.plist in Resources */,
 				C511354E1D3442A700DD3898 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,9 +306,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C511354B1D3442A700DD3898 /* DetailViewController.swift in Sources */,
-				C51135491D3442A700DD3898 /* MasterViewController.swift in Sources */,
-				C51135471D3442A700DD3898 /* AppDelegate.swift in Sources */,
+				C552DFB21D377BC7008E3A67 /* DashLineView.swift in Sources */,
+				C552DF9B1D377B7C008E3A67 /* String.swift in Sources */,
+				C552DF821D3779F0008E3A67 /* AddCarTableViewController.swift in Sources */,
+				C552DF841D3779F0008E3A67 /* DetailViewController.swift in Sources */,
+				C552DF9E1D377B7C008E3A67 /* UITextField.swift in Sources */,
+				C552DFAF1D377B97008E3A67 /* ExecutableQueue.swift in Sources */,
+				C552DFB51D377BF5008E3A67 /* TestApp.xcdatamodeld in Sources */,
+				C552DFAC1D377B97008E3A67 /* CellIdentifiable.swift in Sources */,
+				C552DF9F1D377B7C008E3A67 /* UIView.swift in Sources */,
+				C552DFA51D377B8B008E3A67 /* ErrorPresenter.swift in Sources */,
+				C552DFAE1D377B97008E3A67 /* ErrorPresentable.swift in Sources */,
+				C552DF9D1D377B7C008E3A67 /* UIStoryboardSegue.swift in Sources */,
+				C552DF9A1D377B7C008E3A67 /* Array.swift in Sources */,
+				C552DFA01D377B7C008E3A67 /* UIViewController.swift in Sources */,
+				C552DF8E1D377B3B008E3A67 /* FatalError.swift in Sources */,
+				C552DFAD1D377B97008E3A67 /* CoreDataCompatible.swift in Sources */,
+				C552DFA61D377B8B008E3A67 /* LocalizationService.swift in Sources */,
+				C552DF881D377B22008E3A67 /* AddPictureCollectionViewCell.swift in Sources */,
+				C552DF911D377B49008E3A67 /* AppDelegate.swift in Sources */,
+				C552DF8A1D377B22008E3A67 /* PreviewCarCollectionViewCell.swift in Sources */,
+				C552DFB01D377B97008E3A67 /* PhotoAttachable.swift in Sources */,
+				C552DFA41D377B8B008E3A67 /* CoreDataStack.swift in Sources */,
+				C552DF831D3779F0008E3A67 /* CarListTableViewController.swift in Sources */,
+				C552DF8C1D377B30008E3A67 /* AppLanguage.swift in Sources */,
+				C552DF9C1D377B7C008E3A67 /* UINavigationBar.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +444,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftdevils.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -265,6 +456,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TestApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.swiftdevils.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -290,8 +482,22 @@
 				C51135591D3442A700DD3898 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C552DFB31D377BF5008E3A67 /* TestApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C552DFB41D377BF5008E3A67 /* TestApp.xcdatamodel */,
+			);
+			currentVersion = C552DFB41D377BF5008E3A67 /* TestApp.xcdatamodel */;
+			path = TestApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C511353B1D3442A700DD3898 /* Project object */;
 }

@@ -23,6 +23,5 @@ class DashLineView: UIView {
         CGContextMoveToPoint(context, 0,thickness * 0.5)
         CGContextAddLineToPoint(context, self.bounds.size.width, thickness * 0.5)
         CGContextStrokePath(context)
-    
     }
 }

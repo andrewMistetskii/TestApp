@@ -37,9 +37,16 @@
 		C552DFB21D377BC7008E3A67 /* DashLineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C552DFB11D377BC7008E3A67 /* DashLineView.swift */; };
 		C552DFB51D377BF5008E3A67 /* TestApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C552DFB31D377BF5008E3A67 /* TestApp.xcdatamodeld */; };
 		C552DFB71D377C53008E3A67 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C552DFB61D377C53008E3A67 /* Info.plist */; };
+		C5B045271D37F96E00B1B803 /* ManagedObjectProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B045261D37F96E00B1B803 /* ManagedObjectProtocol.swift */; };
+		C5B045291D37F99A00B1B803 /* DataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B045281D37F99A00B1B803 /* DataProtocol.swift */; };
+		C5B0452B1D37FA2400B1B803 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0452A1D37FA2400B1B803 /* Weather.swift */; };
+		C5B0452D1D37FF9B00B1B803 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0452C1D37FF9B00B1B803 /* Dictionary.swift */; };
+		DE4F6D5446B5EC2DEC7DA853 /* Pods_TestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74E428F19DE4BCDF88055FA /* Pods_TestApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4DDF236EF4023F595B5D8E45 /* Pods-TestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TestApp/Pods-TestApp.debug.xcconfig"; sourceTree = "<group>"; };
+		AC0F5F061B96299AA7D798B7 /* Pods-TestApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.release.xcconfig"; path = "Pods/Target Support Files/Pods-TestApp/Pods-TestApp.release.xcconfig"; sourceTree = "<group>"; };
 		C51135431D3442A700DD3898 /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C511354D1D3442A700DD3898 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C511354F1D3442A700DD3898 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -71,6 +78,11 @@
 		C552DFB11D377BC7008E3A67 /* DashLineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DashLineView.swift; path = Views/DashLineView.swift; sourceTree = "<group>"; };
 		C552DFB41D377BF5008E3A67 /* TestApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestApp.xcdatamodel; sourceTree = "<group>"; };
 		C552DFB61D377C53008E3A67 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5B045261D37F96E00B1B803 /* ManagedObjectProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectProtocol.swift; sourceTree = "<group>"; };
+		C5B045281D37F99A00B1B803 /* DataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProtocol.swift; sourceTree = "<group>"; };
+		C5B0452A1D37FA2400B1B803 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		C5B0452C1D37FF9B00B1B803 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		E74E428F19DE4BCDF88055FA /* Pods_TestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,17 +90,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE4F6D5446B5EC2DEC7DA853 /* Pods_TestApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D34C3E120E34B8CBAA63EFD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E74E428F19DE4BCDF88055FA /* Pods_TestApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		6C2CE08EFF6F573E600D3A8E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4DDF236EF4023F595B5D8E45 /* Pods-TestApp.debug.xcconfig */,
+				AC0F5F061B96299AA7D798B7 /* Pods-TestApp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C511353A1D3442A700DD3898 = {
 			isa = PBXGroup;
 			children = (
 				C51135451D3442A700DD3898 /* TestApp */,
 				C51135441D3442A700DD3898 /* Products */,
+				6C2CE08EFF6F573E600D3A8E /* Pods */,
+				1D34C3E120E34B8CBAA63EFD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -133,6 +165,8 @@
 				C552DFA91D377B97008E3A67 /* ErrorPresentable.swift */,
 				C552DFAA1D377B97008E3A67 /* ExecutableQueue.swift */,
 				C552DFAB1D377B97008E3A67 /* PhotoAttachable.swift */,
+				C5B045261D37F96E00B1B803 /* ManagedObjectProtocol.swift */,
+				C5B045281D37F99A00B1B803 /* DataProtocol.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -157,6 +191,7 @@
 				C552DF971D377B7C008E3A67 /* UITextField.swift */,
 				C552DF981D377B7C008E3A67 /* UIView.swift */,
 				C552DF991D377B7C008E3A67 /* UIViewController.swift */,
+				C5B0452C1D37FF9B00B1B803 /* Dictionary.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -221,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				C552DF8B1D377B30008E3A67 /* AppLanguage.swift */,
+				C5B0452A1D37FA2400B1B803 /* Weather.swift */,
 			);
 			name = Structs;
 			sourceTree = "<group>";
@@ -240,9 +276,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C51135571D3442A700DD3898 /* Build configuration list for PBXNativeTarget "TestApp" */;
 			buildPhases = (
+				6D3C2B855B5EEBEE48B762BB /* [CP] Check Pods Manifest.lock */,
 				C511353F1D3442A700DD3898 /* Sources */,
 				C51135401D3442A700DD3898 /* Frameworks */,
 				C51135411D3442A700DD3898 /* Resources */,
+				62B8D3F67D18219E3CE4FA9D /* [CP] Embed Pods Frameworks */,
+				016DF2B6A8018EE5B88CC315 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -301,6 +340,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		016DF2B6A8018EE5B88CC315 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestApp/Pods-TestApp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		62B8D3F67D18219E3CE4FA9D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TestApp/Pods-TestApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D3C2B855B5EEBEE48B762BB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C511353F1D3442A700DD3898 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -320,13 +407,17 @@
 				C552DF9D1D377B7C008E3A67 /* UIStoryboardSegue.swift in Sources */,
 				C552DF9A1D377B7C008E3A67 /* Array.swift in Sources */,
 				C552DFA01D377B7C008E3A67 /* UIViewController.swift in Sources */,
+				C5B045271D37F96E00B1B803 /* ManagedObjectProtocol.swift in Sources */,
 				C552DF8E1D377B3B008E3A67 /* FatalError.swift in Sources */,
 				C552DFAD1D377B97008E3A67 /* CoreDataCompatible.swift in Sources */,
 				C552DFA61D377B8B008E3A67 /* LocalizationService.swift in Sources */,
 				C552DF881D377B22008E3A67 /* AddPictureCollectionViewCell.swift in Sources */,
 				C552DF911D377B49008E3A67 /* AppDelegate.swift in Sources */,
+				C5B0452D1D37FF9B00B1B803 /* Dictionary.swift in Sources */,
+				C5B0452B1D37FA2400B1B803 /* Weather.swift in Sources */,
 				C552DF8A1D377B22008E3A67 /* PreviewCarCollectionViewCell.swift in Sources */,
 				C552DFB01D377B97008E3A67 /* PhotoAttachable.swift in Sources */,
+				C5B045291D37F99A00B1B803 /* DataProtocol.swift in Sources */,
 				C552DFA41D377B8B008E3A67 /* CoreDataStack.swift in Sources */,
 				C552DF831D3779F0008E3A67 /* CarListTableViewController.swift in Sources */,
 				C552DF8C1D377B30008E3A67 /* AppLanguage.swift in Sources */,
@@ -441,6 +532,7 @@
 		};
 		C51135581D3442A700DD3898 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4DDF236EF4023F595B5D8E45 /* Pods-TestApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TestApp/Info.plist;
@@ -453,6 +545,7 @@
 		};
 		C51135591D3442A700DD3898 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC0F5F061B96299AA7D798B7 /* Pods-TestApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = TestApp/Info.plist;

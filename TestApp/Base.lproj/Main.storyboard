@@ -409,7 +409,45 @@
                         <view key="tableHeaderView" contentMode="scaleToFill" id="n15-Dm-zaX">
                             <rect key="frame" x="0.0" y="0.0" width="600" height="217"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="18O-yG-hCx">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="217"/>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+15" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g80-8o-h8N">
+                                    <rect key="frame" x="243.5" y="35.5" width="113" height="84"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="70"/>
+                                    <color key="textColor" white="1" alpha="0.7477640086206897" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kyiv" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xY1-ta-nu4">
+                                    <rect key="frame" x="280" y="166" width="39.5" height="25.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7FJ-94-Ola" customClass="DashLineView" customModule="TestApp" customModuleProvider="target">
+                                    <rect key="frame" x="80" y="144" width="440" height="2"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="2" id="e6V-fX-rFh"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
                             <color key="backgroundColor" red="0.60784313729999995" green="0.83529411760000005" blue="0.98039215690000003" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="18O-yG-hCx" secondAttribute="trailing" id="5e4-nj-f3k"/>
+                                <constraint firstItem="7FJ-94-Ola" firstAttribute="top" secondItem="g80-8o-h8N" secondAttribute="bottom" constant="25" id="8Mm-TP-gRu"/>
+                                <constraint firstItem="18O-yG-hCx" firstAttribute="leading" secondItem="n15-Dm-zaX" secondAttribute="leading" id="Hcz-za-6ML"/>
+                                <constraint firstItem="7FJ-94-Ola" firstAttribute="leading" secondItem="n15-Dm-zaX" secondAttribute="leading" constant="80" id="Mlf-5z-tqf"/>
+                                <constraint firstItem="7FJ-94-Ola" firstAttribute="centerX" secondItem="n15-Dm-zaX" secondAttribute="centerX" id="XXD-Sz-PNM"/>
+                                <constraint firstItem="g80-8o-h8N" firstAttribute="top" secondItem="n15-Dm-zaX" secondAttribute="top" constant="35.5" id="eIf-ha-oOC"/>
+                                <constraint firstItem="xY1-ta-nu4" firstAttribute="top" secondItem="7FJ-94-Ola" secondAttribute="bottom" constant="20" id="ioY-Ue-Ytk"/>
+                                <constraint firstItem="xY1-ta-nu4" firstAttribute="centerX" secondItem="n15-Dm-zaX" secondAttribute="centerX" id="lXm-6V-8lT"/>
+                                <constraint firstItem="g80-8o-h8N" firstAttribute="centerX" secondItem="n15-Dm-zaX" secondAttribute="centerX" id="nnr-If-bky"/>
+                                <constraint firstAttribute="trailing" secondItem="7FJ-94-Ola" secondAttribute="trailing" constant="80" id="oz6-ea-vcM"/>
+                                <constraint firstItem="18O-yG-hCx" firstAttribute="top" secondItem="n15-Dm-zaX" secondAttribute="top" id="q6k-Ev-p87"/>
+                                <constraint firstAttribute="bottom" secondItem="18O-yG-hCx" secondAttribute="bottom" id="xOD-gf-hY6"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CarCell" rowHeight="74" id="WCw-Qf-5nD">
@@ -492,6 +530,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cityLabel" destination="xY1-ta-nu4" id="xv4-bb-Frl"/>
+                        <outlet property="temperatureLabel" destination="g80-8o-h8N" id="MAy-wm-3gc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rux-fX-hf1" sceneMemberID="firstResponder"/>
             </objects>
@@ -499,6 +541,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="background" width="320" height="240"/>
         <image name="explore_arrow_next" width="15" height="22"/>
         <image name="explore_arrow_previous" width="14" height="22"/>
         <image name="image" width="360" height="165"/>

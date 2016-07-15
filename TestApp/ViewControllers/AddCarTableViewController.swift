@@ -49,6 +49,11 @@ public final class AddCarTableViewController: UITableViewController, PhotoAttach
     private var selectedTransmission = 0
     private var selectedCondition    = 0
     
+    private lazy var saveCarBarButtonItem: UIBarButtonItem = {
+        let item = UIBarButtonItem(title: "Save", style: .Plain, target: self, action: #selector(saveCar))
+        return item
+    }()
+    
     // MARK: - CoreDataCompatible
     
     public var coreDataStack: CoreDataStack!
@@ -92,12 +97,41 @@ public final class AddCarTableViewController: UITableViewController, PhotoAttach
         setUpEditableTextFields()
         setUpTextFieldsWithPickerView()
         setUpTextView()
+        navigationItem.rightBarButtonItem = saveCarBarButtonItem
         navigationItem.title = "Add Car"
         navigationController?.navigationBar.setBottomBorderColor(UIColor.whiteColor(), height: 1.0)
         setUpCollectionView()
     }
     
     // MARK: - Private Methods
+    
+    @objc private func saveCar() {
+        print("save car")
+        let car = Car()
+        car.model = carModelTextField.text
+        car.price = priceTextField.text
+        car.engine = engineTextField.text
+        car.transmission = transmissionTextField.text
+        car.condition = conditionTextField.text
+        car.carDescription = descriptionTextView.text
+        var photos: [CarPhoto] = []
+        
+        for image in pictureDataSource {
+            let photo = CarPhoto()
+            photo.photoData = UIImageJPEGRepresentation(image, 0.5)
+            photos.append(photo)
+        }
+        car.photos = photos
+        
+        do {
+            try coreDataStack.managedObjectContext.save()
+            if let navigationController = self.navigationController {
+                navigationController.popViewControllerAnimated(true)
+            }
+        } catch {
+            fatalError(FatalError.CoreData.managedObjectContextFailedSaveData)
+        }
+    }
     
     private func setUpCollectionView() {
         registerNibs()
@@ -228,18 +262,12 @@ extension AddCarTableViewController: UICollectionViewDataSource {
 
 extension AddCarTableViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
-    public func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        guard let image = info[UIImagePickerControllerOriginalImage] as? UIImage else { return }
-        if let pictureURL = info[UIImagePickerControllerReferenceURL] as? NSURL {
-            pictureDataSource.append(image)
-            pictureURLs.append(pictureURL.absoluteString)
-            pictureCollectionView.reloadData()
-            pictureCollectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: pictureDataSource.count, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: false)
-            dismissViewControllerAnimated(true, completion: nil)
-        } else {
-            UIImageWriteToSavedPhotosAlbum(image, self, #selector(AddCarTableViewController.image(_:didFinishSavingWithError:contextInfo:)), nil)
-
-        }
+    public func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        pictureDataSource.append(image)
+        
+        pictureCollectionView.reloadData()
+        pictureCollectionView.scrollToItemAtIndexPath(NSIndexPath(forRow: pictureDataSource.count, inSection: 0), atScrollPosition: .CenteredHorizontally, animated: false)
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     @objc private func image(image: UIImage, didFinishSavingWithError error: NSError?, contextInfo:UnsafePointer<Void>) {

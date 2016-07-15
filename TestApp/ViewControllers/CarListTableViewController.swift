@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 public final class CarListTableViewController: UITableViewController, CoreDataCompatible {
 
@@ -17,6 +18,7 @@ public final class CarListTableViewController: UITableViewController, CoreDataCo
     private let locationManager = CLLocationManager()
     private var headerView: UIView?
     private var tableHeaderHeight: CGFloat = 0
+    private var fetchResultController: NSFetchedResultsController?
     
     // MARK: - CoreDataCompatible
     
@@ -31,15 +33,26 @@ public final class CarListTableViewController: UITableViewController, CoreDataCo
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        setStretchyHeader()
+        setupFetchResultsController()
         self.locationManager.requestAlwaysAuthorization()
         self.locationManager.requestWhenInUseAuthorization()
-        
+    }
+    
+    public override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
+        
+        do {
+            try fetchResultController?.performFetch()
+            tableView.reloadData()
+        } catch {
+            fatalError("Failed to fetch data")
+        }
+
     }
 
     // MARK: - Segues
@@ -58,6 +71,14 @@ public final class CarListTableViewController: UITableViewController, CoreDataCo
     
     // MARK: - Private Methods 
     
+    private func checkLocationService() {
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+    }
+    
     private func prepareCarDetailsSegue(segue: UIStoryboardSegue) {
         // TODO: Add Implementation
     }
@@ -67,37 +88,20 @@ public final class CarListTableViewController: UITableViewController, CoreDataCo
         destinationController.coreDataStack = coreDataStack
     }
     
-    private func setStretchyHeader() {
-        headerView = tableView.tableHeaderView
-        tableView.tableHeaderView = nil
-        
-        guard let headerView = headerView else { return }
-        
-        tableView.addSubview(headerView)
-        tableHeaderHeight = headerView.frame.height
-        tableView.contentInset = UIEdgeInsets(top: tableHeaderHeight, left: 0, bottom: 0, right: 0)
-        tableView.contentOffset = CGPointMake(0, -tableHeaderHeight)
-        
-        updateHeaderView()
-    }
-    
-    private func updateHeaderView() {
-        guard let headerView = headerView else { return }
-        
-        var headerRect = CGRect(x: 0, y: -tableHeaderHeight, width: tableView.bounds.width, height: tableHeaderHeight)
-        if tableView.contentOffset.y < -tableHeaderHeight {
-            headerRect.origin.y = tableView.contentOffset.y
-            headerRect.size.height = -tableView.contentOffset.y
-        }
-        headerView.frame = headerRect
-    }
-    
     private func updateWeatherUI(withWeatherData data: Weather) {
         if let temperature = data.temperature,
             city = data.city {
             temperatureLabel.text = "+\(temperature)"
             cityLabel.text = city
         }
+    }
+    
+    private func setupFetchResultsController() {
+        let request = NSFetchRequest(entityName: Car.entityName)
+        
+        request.sortDescriptors = []
+        fetchResultController = NSFetchedResultsController(fetchRequest: request, managedObjectContext: self.coreDataStack.managedObjectContext, sectionNameKeyPath: nil, cacheName: nil)
+        fetchResultController?.delegate = self
     }
 
 }
@@ -110,11 +114,14 @@ extension CarListTableViewController {
     }
     
     public override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return objects.count
+        return fetchResultController?.fetchedObjects?.count ?? 0
     }
     
     public override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("CarCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(CarCell.identifier, forIndexPath: indexPath) as! CarCell
+        if let car = fetchResultController?.objectAtIndexPath(indexPath) as? Car {
+            cell.model = car
+        }
         return cell
     }
 
@@ -129,8 +136,17 @@ extension CarListTableViewController {
     
     public override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            objects.removeAtIndex(indexPath.row)
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+            guard let car = fetchResultController?.objectAtIndexPath(indexPath) as? Car else { return }
+            coreDataStack.managedObjectContext.deleteObject(car)
+            coreDataStack.saveContext()
+        }
+    }
+}
+
+extension CarListTableViewController: NSFetchedResultsControllerDelegate {
+    public func controller(controller: NSFetchedResultsController, didChangeObject anObject: AnyObject, atIndexPath indexPath: NSIndexPath?, forChangeType type: NSFetchedResultsChangeType, newIndexPath: NSIndexPath?) {
+        if type == .Delete {
+            tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
         }
     }
 }
@@ -138,6 +154,7 @@ extension CarListTableViewController {
 // MARK: - CLLocationManagerDelegate
 
 extension CarListTableViewController: CLLocationManagerDelegate {
+    
     public func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         
         let userLocation:CLLocation = locations.first!
@@ -154,14 +171,18 @@ extension CarListTableViewController: CLLocationManagerDelegate {
                 
         }
     }
-}
-
-// MARK: - UIScrollViewDelegate
-
-extension CarListTableViewController {
-    public override func scrollViewDidScroll(scrollView: UIScrollView) {
-        updateHeaderView()
+    
+    public func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
+        // def location - Kiev
+        Weather.getForecast(["lat" : 50.43, "lon" : 30.52], completion: { [weak self] (item) in
+            guard let strongSelf = self else { return }
+            guard let weather = item as? Weather else { return }
+            strongSelf.updateWeatherUI(withWeatherData: weather)
+        }) { (error) in
+            
+        }
     }
+    
 }
 
 

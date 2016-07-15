@@ -41,6 +41,10 @@
 		C5B045291D37F99A00B1B803 /* DataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B045281D37F99A00B1B803 /* DataProtocol.swift */; };
 		C5B0452B1D37FA2400B1B803 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0452A1D37FA2400B1B803 /* Weather.swift */; };
 		C5B0452D1D37FF9B00B1B803 /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5B0452C1D37FF9B00B1B803 /* Dictionary.swift */; };
+		C5EB92811D3855D500B9360D /* Car.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EB92801D3855D500B9360D /* Car.swift */; };
+		C5EB92831D38598100B9360D /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EB92821D38598100B9360D /* CoreDataModel.swift */; };
+		C5EB92851D385C0200B9360D /* CarPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EB92841D385C0200B9360D /* CarPhoto.swift */; };
+		C5EB92871D387E1000B9360D /* CarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C5EB92861D387E1000B9360D /* CarCell.swift */; };
 		DE4F6D5446B5EC2DEC7DA853 /* Pods_TestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E74E428F19DE4BCDF88055FA /* Pods_TestApp.framework */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +86,10 @@
 		C5B045281D37F99A00B1B803 /* DataProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataProtocol.swift; sourceTree = "<group>"; };
 		C5B0452A1D37FA2400B1B803 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		C5B0452C1D37FF9B00B1B803 /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
+		C5EB92801D3855D500B9360D /* Car.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Car.swift; sourceTree = "<group>"; };
+		C5EB92821D38598100B9360D /* CoreDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
+		C5EB92841D385C0200B9360D /* CarPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarPhoto.swift; sourceTree = "<group>"; };
+		C5EB92861D387E1000B9360D /* CarCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CarCell.swift; path = Cells/CarCell.swift; sourceTree = "<group>"; };
 		E74E428F19DE4BCDF88055FA /* Pods_TestApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -153,6 +161,7 @@
 				C552DF851D377B22008E3A67 /* AddPictureCollectionViewCell.swift */,
 				C552DF861D377B22008E3A67 /* AddPictureCollectionViewCell.xib */,
 				C552DF871D377B22008E3A67 /* PreviewCarCollectionViewCell.swift */,
+				C5EB92861D387E1000B9360D /* CarCell.swift */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -167,6 +176,7 @@
 				C552DFAB1D377B97008E3A67 /* PhotoAttachable.swift */,
 				C5B045261D37F96E00B1B803 /* ManagedObjectProtocol.swift */,
 				C5B045281D37F99A00B1B803 /* DataProtocol.swift */,
+				C5EB92821D38598100B9360D /* CoreDataModel.swift */,
 			);
 			name = Protocols;
 			sourceTree = "<group>";
@@ -177,6 +187,8 @@
 				C552DFA11D377B8B008E3A67 /* CoreDataStack.swift */,
 				C552DFA21D377B8B008E3A67 /* ErrorPresenter.swift */,
 				C552DFA31D377B8B008E3A67 /* LocalizationService.swift */,
+				C5EB92801D3855D500B9360D /* Car.swift */,
+				C5EB92841D385C0200B9360D /* CarPhoto.swift */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -395,9 +407,11 @@
 			files = (
 				C552DFB21D377BC7008E3A67 /* DashLineView.swift in Sources */,
 				C552DF9B1D377B7C008E3A67 /* String.swift in Sources */,
+				C5EB92831D38598100B9360D /* CoreDataModel.swift in Sources */,
 				C552DF821D3779F0008E3A67 /* AddCarTableViewController.swift in Sources */,
 				C552DF841D3779F0008E3A67 /* DetailViewController.swift in Sources */,
 				C552DF9E1D377B7C008E3A67 /* UITextField.swift in Sources */,
+				C5EB92851D385C0200B9360D /* CarPhoto.swift in Sources */,
 				C552DFAF1D377B97008E3A67 /* ExecutableQueue.swift in Sources */,
 				C552DFB51D377BF5008E3A67 /* TestApp.xcdatamodeld in Sources */,
 				C552DFAC1D377B97008E3A67 /* CellIdentifiable.swift in Sources */,
@@ -407,11 +421,13 @@
 				C552DF9D1D377B7C008E3A67 /* UIStoryboardSegue.swift in Sources */,
 				C552DF9A1D377B7C008E3A67 /* Array.swift in Sources */,
 				C552DFA01D377B7C008E3A67 /* UIViewController.swift in Sources */,
+				C5EB92871D387E1000B9360D /* CarCell.swift in Sources */,
 				C5B045271D37F96E00B1B803 /* ManagedObjectProtocol.swift in Sources */,
 				C552DF8E1D377B3B008E3A67 /* FatalError.swift in Sources */,
 				C552DFAD1D377B97008E3A67 /* CoreDataCompatible.swift in Sources */,
 				C552DFA61D377B8B008E3A67 /* LocalizationService.swift in Sources */,
 				C552DF881D377B22008E3A67 /* AddPictureCollectionViewCell.swift in Sources */,
+				C5EB92811D3855D500B9360D /* Car.swift in Sources */,
 				C552DF911D377B49008E3A67 /* AppDelegate.swift in Sources */,
 				C5B0452D1D37FF9B00B1B803 /* Dictionary.swift in Sources */,
 				C5B0452B1D37FA2400B1B803 /* Weather.swift in Sources */,

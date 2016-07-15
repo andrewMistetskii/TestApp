@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15F34" minimumToolsVersion="Xcode 7.0">
-    <elements/>
+    <entity name="Car" representedClassName=".Car" syncable="YES">
+        <attribute name="carDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="condition" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="engine" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="model" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="transmission" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="photoSet" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="CarPhoto" inverseName="cars" inverseEntity="CarPhoto" syncable="YES"/>
+    </entity>
+    <entity name="CarPhoto" representedClassName=".CarPhoto" syncable="YES">
+        <attribute name="photoData" optional="YES" attributeType="Binary" syncable="YES"/>
+        <relationship name="cars" optional="YES" maxCount="1" deletionRule="Cascade" destinationEntity="Car" inverseName="photoSet" inverseEntity="Car" syncable="YES"/>
+    </entity>
+    <fetchRequest name="Car" entity="Car"/>
+    <elements>
+        <element name="Car" positionX="-63" positionY="-18" width="128" height="150"/>
+        <element name="CarPhoto" positionX="-45" positionY="45" width="128" height="75"/>
+    </elements>
 </model>
